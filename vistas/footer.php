@@ -21,5 +21,6 @@
     <script src="../public/datatables/vfs_fonts.js"></script>
     <script src="../public/js/bootbox.min.js"></script>
     <script src="../public/js/bootstrap-select.min.js"></script>
+    <script src="https://kit.fontawesome.com/e9e2c6f7a7.js" crossorigin="anonymous"></script>
   </body>
 </html>

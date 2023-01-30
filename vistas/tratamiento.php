@@ -42,7 +42,7 @@
                             </tfoot>
                         </table>
                     </div>
-                    <div class="panel-body" style="height: 400px;" id="formularioregistros">
+                    <div class="panel-body" style="height: 920px;" id="formularioregistros">
                         <form name="formulario" id="formulario" method="POST">
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Ficha medica:</label>
@@ -52,6 +52,95 @@
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Fecha:</label>
                             <input type="date" class="form-control" name="fecha" id="fecha" required>
+                          </div>
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label>Odontograma</label>
+                          </div>
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label>Superior</label>
+                          </div>
+                          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <label><i class="fa-solid fa-tooth"></i> 18</label>
+                            <select name="d18" id="d18" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 17</label>
+                            <select name="d17" id="d17" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 16</label>
+                            <select name="d16" id="d16" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 15</label>
+                            <select name="d15" id="d15" class="form-control selectpicker" data-live-search="true" required></select>
+                          </div>
+                          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <label><i class="fa-solid fa-tooth"></i> 14</label>
+                            <select name="d14" id="d14" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 13</label>
+                            <select name="d13" id="d13" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 12</label>
+                            <select name="d12" id="d12" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 11</label>
+                            <select name="d11" id="d11" class="form-control selectpicker" data-live-search="true" required></select>
+                          </div>
+                          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <label><i class="fa-solid fa-tooth"></i> 21</label>
+                            <select name="d21" id="d21" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 22</label>
+                            <select name="d22" id="d22" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 23</label>
+                            <select name="d23" id="d23" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 24</label>
+                            <select name="d24" id="d24" class="form-control selectpicker" data-live-search="true" required></select>
+                          </div>
+                          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <label><i class="fa-solid fa-tooth"></i> 25</label>
+                            <select name="d25" id="d25" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 26</label>
+                            <select name="d26" id="d26" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 27</label>
+                            <select name="d27" id="d27" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 28</label>
+                            <select name="d28" id="d28" class="form-control selectpicker" data-live-search="true" required></select>
+                          </div>
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label>Inferior</label>
+                          </div>
+                          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <label><i class="fa-solid fa-tooth"></i> 48</label>
+                            <select name="d48" id="d48" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 47</label>
+                            <select name="d47" id="d47" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 46</label>
+                            <select name="d46" id="d46" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 45</label>
+                            <select name="d45" id="d45" class="form-control selectpicker" data-live-search="true" required></select>
+                          </div>
+                          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <label><i class="fa-solid fa-tooth"></i> 44</label>
+                            <select name="d44" id="d44" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 43</label>
+                            <select name="d43" id="d43" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 42</label>
+                            <select name="d42" id="d42" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 41</label>
+                            <select name="d41" id="d41" class="form-control selectpicker" data-live-search="true" required></select>
+                          </div>
+                          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <label><i class="fa-solid fa-tooth"></i> 31</label>
+                            <select name="d31" id="d31" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 32</label>
+                            <select name="d32" id="d32" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 33</label>
+                            <select name="d33" id="d33" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 34</label>
+                            <select name="d34" id="d34" class="form-control selectpicker" data-live-search="true" required></select>
+                          </div>
+                          <div class="form-group col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <label><i class="fa-solid fa-tooth"></i> 35</label>
+                            <select name="d35" id="d35" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 36</label>
+                            <select name="d36" id="d36" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 37</label>
+                            <select name="d37" id="d37" class="form-control selectpicker" data-live-search="true" required></select>
+                            <label><i class="fa-solid fa-tooth"></i> 38</label>
+                            <select name="d38" id="d38" class="form-control selectpicker" data-live-search="true" required></select>
                           </div>
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Diagnosticos y complicaciones:</label>

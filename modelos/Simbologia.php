@@ -53,5 +53,11 @@
             $sql = "SELECT * FROM simbologia";
             return ejecutarConsulta($sql);
         }
+
+        //Implementamos un método para listar los registros y mostrar en el select
+        public function select(){
+            $sql = "SELECT id_simbologia, nombre FROM simbologia WHERE condicion=1";
+            return ejecutarConsulta($sql);
+        }
     }
 ?>
