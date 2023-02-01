@@ -9,25 +9,25 @@ function init(){
 		guardaryeditar(e);	
 	})
 
-    //Cargamos los items al select paciente
-    $.post("../ajax/ficha_medica.php?op=selectPaciente", function(r){
-        $("#id_paciente").html(r);
-        $('#id_paciente').selectpicker('refresh');
+    //Mostramos los permisos
+	$.post("../ajax/usuario.php?op=permisos&id=",function(r){
+        $("#permisos").html(r);
     });
 }
 
 //Funci+on limpiar
 function limpiar(){
-    $("#id_ficha_medica").val("");
-    $("#id_paciente").val("");
-    $("#fecha").val("");
-    $("#motivo_consulta").val("");
-    $("#enfermedad_problema_actual").val("");
-    $("#antecedentes_personales_familiares").val("");
-    $("#signos_vitales").val("");
-    $("#examen_sistema_estomatognatico").val("");
-    $("#planes_diagnostico").val("");
-    $("#diagnostico").val("");
+    $("#idusuario").val("");
+    $("#nombres").val("");
+    $("#apellidos").val("");
+    $("#tipo_documento").val("");
+    $("#num_documento").val("");
+    $("#direccion").val("");
+    $("#telefono").val("");
+    $("#email").val("");
+    $("#cargo").val("");
+    $("#login").val("");
+    $("#clave").val("");
 }
 
 //Función mostrar formulario
@@ -67,7 +67,7 @@ function listar(){
         ],
         "ajax":
                 {
-                    url: '../ajax/ficha_medica.php?op=listar',
+                    url: '../ajax/usuario.php?op=listar',
                     type : "get",
                     dataType : "json",
                     error: function(e){
@@ -87,7 +87,7 @@ function guardaryeditar(e){
 	var formData = new FormData($("#formulario")[0]);
 
     $.ajax({
-        url: "../ajax/ficha_medica.php?op=guardaryeditar",
+        url: "../ajax/usuario.php?op=guardaryeditar",
 	    type: "POST",
 	    data: formData,
 	    contentType: false,
@@ -102,31 +102,35 @@ function guardaryeditar(e){
     limpiar();
 }
 
-function mostrar(id_ficha_medica){
-    $.post("../ajax/ficha_medica.php?op=mostrar",{id_ficha_medica : id_ficha_medica}, function(data, status)
+function mostrar(idusuario){
+    $.post("../ajax/usuario.php?op=mostrar",{idusuario : idusuario}, function(data, status)
     {
         data = JSON.parse(data);
         mostrarform(true);
 
-        $("#id_ficha_medica").val(data.id_ficha_medica);
-        $("#id_paciente").val(data.id_paciente);
-        $('#id_paciente').selectpicker('refresh');
-        $("#fecha").val(data.fecha);
-        $("#motivo_consulta").val(data.motivo_consulta);
-        $("#enfermedad_problema_actual").val(data.enfermedad_problema_actual);
-        $("#antecedentes_personales_familiares").val(data.antecedentes_personales_familiares);
-        $("#signos_vitales").val(data.signos_vitales);
-        $("#examen_sistema_estomatognatico").val(data.examen_sistema_estomatognatico);
-        $("#planes_diagnostico").val(data.planes_diagnostico);
-        $("#diagnostico").val(data.diagnostico);
-    })
+        $("#idusuario").val(data.idusuario);
+        $("#nombres").val(data.nombres);
+        $("#apellidos").val(data.apellidos);
+        $("#tipo_documento").val(data.tipo_documento);
+        $("#tipo_documento").selectpicker('refresh');
+        $("#num_documento").val(data.num_documento);
+        $("#direccion").val(data.direccion);
+        $("#telefono").val(data.telefono);
+        $("#email").val(data.email);
+        $("#cargo").val(data.cargo);
+        $("#login").val(data.login);
+        $("#clave").val(data.clave);
+    });
+    $.post("../ajax/usuario.php?op=permisos&id="+idusuario,function(r){
+        $("#permisos").html(r);
+    });
 }
 
 //Función para desactivar registros
-function desactivar(id_ficha_medica){
-    bootbox.confirm("¿Está seguro de desactivar la ficha medica?", function(result){
+function desactivar(idusuario){
+    bootbox.confirm("¿Está seguro de desactivar el usuario?", function(result){
         if(result){
-            $.post("../ajax/ficha_medica.php?op=desactivar", {id_ficha_medica : id_ficha_medica}, function(e){
+            $.post("../ajax/usuario.php?op=desactivar", {idusuario : idusuario}, function(e){
                 bootbox.alert(e);
                 tabla.ajax.reload();
             });
@@ -135,10 +139,10 @@ function desactivar(id_ficha_medica){
 }
 
 //Función para activar registros
-function activar(id_ficha_medica){
-    bootbox.confirm("¿Está seguro de activar la ficha medica?", function(result){
+function activar(idusuario){
+    bootbox.confirm("¿Está seguro de activar el usuario?", function(result){
         if(result){
-            $.post("../ajax/ficha_medica.php?op=activar", {id_ficha_medica : id_ficha_medica}, function(e){
+            $.post("../ajax/usuario.php?op=activar", {idusuario : idusuario}, function(e){
                 bootbox.alert(e);
                 tabla.ajax.reload();
             });
@@ -147,10 +151,10 @@ function activar(id_ficha_medica){
 }
 
 //Función para eliminar registros
-function eliminar(id_ficha_medica){
-    bootbox.confirm("¿Está seguro de eliminar la ficha medica?", function(result){
+function eliminar(idusuario){
+    bootbox.confirm("¿Está seguro de eliminar el usuario?", function(result){
         if(result){
-            $.post("../ajax/ficha_medica.php?op=eliminar", {id_ficha_medica : id_ficha_medica}, function(e){
+            $.post("../ajax/usuario.php?op=eliminar", {idusuario : idusuario}, function(e){
                 bootbox.alert(e);
                 tabla.ajax.reload();
             });
