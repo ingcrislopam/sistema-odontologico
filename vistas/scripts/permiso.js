@@ -14,6 +14,7 @@ function init(){
 function limpiar(){
     $("#idpermiso").val("");
     $("#nombre").val("");
+    $("#descripcion").val("");
 }
 
 //Función mostrar formulario
@@ -96,6 +97,7 @@ function mostrar(idpermiso){
 
         $("#idpermiso").val(data.idpermiso);
         $("#nombre").val(data.nombre);
+        $("#descripcion").val(data.descripcion);
     })
 }
 

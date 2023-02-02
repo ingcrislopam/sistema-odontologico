@@ -5,15 +5,16 @@
 
     $idpermiso = isset($_POST["idpermiso"])? limpiarCadena($_POST["idpermiso"]):"";
     $nombre = isset($_POST["nombre"])? limpiarCadena($_POST["nombre"]):"";
+    $descripcion = isset($_POST["descripcion"])? limpiarCadena($_POST["descripcion"]):"";
 
     switch ($_GET["op"]){
         case 'guardaryeditar':
             if (empty($idpermiso)){
-                $rspta=$permiso->insertar($nombre);
+                $rspta=$permiso->insertar($nombre, $descripcion);
                 echo $rspta ? "Permiso registrado" : "Permiso no se pudo registrar";
             }
             else {
-                $rspta=$permiso->editar($idpermiso, $nombre);
+                $rspta=$permiso->editar($idpermiso, $nombre, $descripcion);
                 echo $rspta ? "Permiso actualizado" : "Permiso no se pudo actualizar";
             }
         break;
@@ -51,7 +52,8 @@
                     '<button class="btn btn-warning" onclick="mostrar('.$reg->idpermiso.')"><i class="fa fa-pencil"></i></button>'.
                     ' <button class="btn btn-primary" onclick="activar('.$reg->idpermiso.')"><i class="fa fa-check"></i></button>',
                     "1"=>$reg->nombre,
-                    "2"=>($reg->condicion)?'<span class="label bg-green">Activado</span>':
+                    "2"=>$reg->descripcion,
+                    "3"=>($reg->condicion)?'<span class="label bg-green">Activado</span>':
                     '<span class="label bg-red">Desactivado</span>'
                 );
             }

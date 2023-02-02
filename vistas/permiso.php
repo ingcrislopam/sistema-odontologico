@@ -35,6 +35,7 @@ else
                             <thead>
                                 <th>Opciones</th>
                                 <th>Nombre</th>
+                                <th>Descripcion</th>
                                 <th>Estado</th>
                             </thead>
                             <tbody>
@@ -43,6 +44,7 @@ else
                             <tfoot>
                                 <th>Opciones</th>
                                 <th>Nombre</th>
+                                <th>Descripcion</th>
                                 <th>Estado</th>
                             </tfoot>
                         </table>
@@ -52,7 +54,11 @@ else
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Nombre:</label>
                             <input type="hidden" class="form-control" name="idpermiso" id="idpermiso">
-                            <input type="text" class="form-control" name="nombre" id="nombre" maxLength="50" placeholder="Nombre" required>
+                            <input type="text" class="form-control" name="nombre" id="nombre" maxLength="30" placeholder="Nombre" required>
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Descripcion:</label>
+                            <input type="text" class="form-control" name="descripcion" id="descripcion" maxLength="50" placeholder="Descripcion" required>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>

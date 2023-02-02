@@ -9,15 +9,15 @@
         }
 
         //Implementamos un método para insertar registros
-        public function insertar($nombre){
-            $sql = "INSERT INTO permiso (nombre) 
-            VALUES ('$nombre')";
+        public function insertar($nombre, $descripcion){
+            $sql = "INSERT INTO permiso (nombre, descripcion) 
+            VALUES ('$nombre', '$descripcion')";
             return ejecutarConsulta($sql);
         }
 
         //Implementamos un método para editar registros
-        public function editar($idpermiso, $nombre){
-            $sql = "UPDATE permiso SET nombre='$nombre' 
+        public function editar($idpermiso, $nombre, $descripcion){
+            $sql = "UPDATE permiso SET nombre='$nombre', descripcion='$descripcion' 
             WHERE idpermiso='$idpermiso'";
             return ejecutarConsulta($sql);
         }
