@@ -98,7 +98,7 @@ else
                             <label>Planes de diagnostico:</label>
                             <input type="text" class="form-control" name="planes_diagnostico" id="planes_diagnostico" maxLength="100" placeholder="Planes de diagnostico" required>
                           </div>
-                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <label>Diagnostico:</label>
                             <input type="text" class="form-control" name="diagnostico" id="diagnostico" maxLength="100" placeholder="Diagnostico" required>
                           </div>

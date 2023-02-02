@@ -163,7 +163,7 @@ else
                             <label>Procedimientos:</label>
                             <input type="text" class="form-control" name="procedimientos" id="procedimientos" maxLength="100" placeholder="Procedimientos" required>
                           </div>
-                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                          <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <label>Prescripciones:</label>
                             <input type="text" class="form-control" name="prescripciones" id="prescripciones" maxLength="100" placeholder="Prescripciones" required>
                           </div>
