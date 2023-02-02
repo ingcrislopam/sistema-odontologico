@@ -1,5 +1,18 @@
 <?php
+//Activamos el almacenamiento en el buffer
+ob_start();
+session_start();
+
+if (!isset($_SESSION['nombres']))
+{
+  header("Location: login.html");
+}
+else
+{
   require 'header.php';
+
+  if ($_SESSION['consultorio']==1)
+  {
 ?>
 <!--Contenido-->
       <!-- Content Wrapper. Contains page content -->
@@ -80,6 +93,16 @@
     </div><!-- /.content-wrapper -->
   <!--Fin-Contenido-->
 <?php
+  }
+  else
+  {
+    require 'noacceso.php';
+  }
+
   require 'footer.php';
 ?>
 <script type="text/javascript" src="scripts/paciente.js"></script>
+<?php
+}
+ob_end_flush();
+?>

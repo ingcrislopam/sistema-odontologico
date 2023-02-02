@@ -1,3 +1,7 @@
+<?php
+if (strlen(session_id()) < 1)
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -53,7 +57,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="../public/dist/img/perfilusuario.png" class="user-image" alt="User Image">
-                  <span class="hidden-xs">Cristhian López</span>
+                  <span class="hidden-xs"><?php echo $_SESSION['nombres']." ".$_SESSION['apellidos']?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -69,7 +73,7 @@
                   <li class="user-footer">
                     
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Cerrar</a>
+                      <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Cerrar</a>
                     </div>
                   </li>
                 </ul>
@@ -87,34 +91,89 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header"></li>
-            <li>
+            <?php
+            if ($_SESSION['escritorio']==1)
+            {
+              echo '<li>
               <a href="#">
                 <i class="fa fa-tasks"></i> <span>Escritorio</span>
               </a>
-            </li>            
-            <li class="treeview">
+            </li>';
+            }
+            ?>
+            
+            <?php
+            if ($_SESSION['consultorio']==1)
+            {
+              echo '<li class="treeview">
               <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Registro</span>
+              <i class="fa-solid fa-hospital"></i>
+                <span>Consultorio</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="paciente.php"><i class="fa fa-circle-o"></i> Pacientes</a></li>
+              </ul>
+            </li>';
+            }
+            ?>
+
+            <?php
+            if ($_SESSION['historial']==1)
+            {
+              echo '<li class="treeview">
+              <a href="#">
+                <i class="fa-solid fa-laptop"></i>
+                <span>Historial medico</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
                 <li><a href="ficha_medica.php"><i class="fa fa-circle-o"></i> Fichas medicas</a></li>
                 <li><a href="tratamiento.php"><i class="fa fa-circle-o"></i> Tratamientos</a></li>
               </ul>
-            </li>
-            
-            <li class="treeview">
+            </li>';
+            }
+            ?>
+
+            <?php
+            if ($_SESSION['mantenimiento']==1)
+            {
+              echo '<li class="treeview">
               <a href="#">
-                <i class="fa fa-th"></i>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
                 <span>Mantenimiento</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="simbologia.php"><i class="fa fa-circle-o"></i> Simbologia</a></li>
               </ul>
-            </li>     
+            </li>';
+            }
+            ?>
+            
+            <?php
+            if ($_SESSION['acceso']==1)
+            {
+              echo '<li class="treeview">
+              <a href="#">
+                <i class="fa fa-folder"></i> <span>Acceso</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="usuario.php"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                <li><a href="permiso.php"><i class="fa fa-circle-o"></i> Permisos</a></li>
+              </ul>
+            </li>';
+            }
+            ?>
+
+            
+
+            
+            
+            
+            
+            
           </ul>
         </section>
         <!-- /.sidebar -->
