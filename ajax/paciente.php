@@ -9,15 +9,16 @@
     $apellidos = isset($_POST["apellidos"])? limpiarCadena($_POST["apellidos"]):"";
     $direccion = isset($_POST["direccion"])? limpiarCadena($_POST["direccion"]):"";
     $fecha_nacimiento = isset($_POST["fecha_nacimiento"])? limpiarCadena($_POST["fecha_nacimiento"]):"";
+    $sexo = isset($_POST["sexo"])? limpiarCadena($_POST["sexo"]):"";
 
     switch ($_GET["op"]){
         case 'guardaryeditar':
             if (empty($id_paciente)){
-                $rspta=$paciente->insertar($cedula, $nombres, $apellidos, $direccion, $fecha_nacimiento);
+                $rspta=$paciente->insertar($cedula, $nombres, $apellidos, $direccion, $fecha_nacimiento, $sexo);
                 echo $rspta ? "Paciente registrado" : "Paciente no se pudo registrar";
             }
             else {
-                $rspta=$paciente->editar($id_paciente, $cedula, $nombres, $apellidos, $direccion, $fecha_nacimiento);
+                $rspta=$paciente->editar($id_paciente, $cedula, $nombres, $apellidos, $direccion, $fecha_nacimiento, $sexo);
                 echo $rspta ? "Paciente actualizado" : "Paciente no se pudo actualizar";
             }
         break;
@@ -59,7 +60,8 @@
                     "3"=>$reg->apellidos,
                     "4"=>$reg->direccion,
                     "5"=>$reg->edad,
-                    "6"=>($reg->condicion)?'<span class="label bg-green">Activado</span>':
+                    "6"=>$reg->sexo,
+                    "7"=>($reg->condicion)?'<span class="label bg-green">Activado</span>':
                     '<span class="label bg-red">Desactivado</span>'
                 );
             }

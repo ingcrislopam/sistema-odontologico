@@ -9,15 +9,15 @@
         }
 
         //Implementamos un método para insertar registros
-        public function insertar($cedula, $nombres, $apellidos, $direccion, $fecha_nacimiento){
-            $sql = "INSERT INTO paciente (cedula, nombres, apellidos, direccion, fecha_nacimiento, condicion) 
-            VALUES ('$cedula', '$nombres', '$apellidos', '$direccion', '$fecha_nacimiento', '1')";
+        public function insertar($cedula, $nombres, $apellidos, $direccion, $fecha_nacimiento, $sexo){
+            $sql = "INSERT INTO paciente (cedula, nombres, apellidos, direccion, fecha_nacimiento, sexo condicion) 
+            VALUES ('$cedula', '$nombres', '$apellidos', '$direccion', '$fecha_nacimiento', '$sexo', '1')";
             return ejecutarConsulta($sql);
         }
 
         //Implementamos un método para editar registros
-        public function editar($id_paciente, $cedula, $nombres, $apellidos, $direccion, $fecha_nacimiento){
-            $sql = "UPDATE paciente SET cedula='$cedula', nombres='$nombres', apellidos='$apellidos', direccion='$direccion', fecha_nacimiento='$fecha_nacimiento' 
+        public function editar($id_paciente, $cedula, $nombres, $apellidos, $direccion, $fecha_nacimiento, $sexo){
+            $sql = "UPDATE paciente SET cedula='$cedula', nombres='$nombres', apellidos='$apellidos', direccion='$direccion', fecha_nacimiento='$fecha_nacimiento', sexo='$sexo' 
             WHERE id_paciente='$id_paciente'";
             return ejecutarConsulta($sql);
         }
@@ -50,7 +50,7 @@
 
         //Implementamos un método para listar los registros
         public function listar(){
-            $sql = "SELECT id_paciente, cedula, nombres, apellidos, direccion, TIMESTAMPDIFF(YEAR,fecha_nacimiento,CURDATE()) AS edad, condicion FROM paciente";
+            $sql = "SELECT id_paciente, cedula, nombres, apellidos, direccion, TIMESTAMPDIFF(YEAR,fecha_nacimiento,CURDATE()) AS edad, sexo, condicion FROM paciente";
             return ejecutarConsulta($sql);
         }
 

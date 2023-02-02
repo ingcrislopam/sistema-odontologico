@@ -39,6 +39,7 @@ else
                                 <th>Apellidos</th>
                                 <th>Direccion</th>
                                 <th>Edad</th>
+                                <th>Sexo</th>
                                 <th>Estado</th>
                             </thead>
                             <tbody>
@@ -51,6 +52,7 @@ else
                                 <th>Apellidos</th>
                                 <th>Direccion</th>
                                 <th>Edad</th>
+                                <th>Sexo</th>
                                 <th>Estado</th>
                             </tfoot>
                         </table>
@@ -77,6 +79,13 @@ else
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <label>Fecha de nacimiento:</label>
                             <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" required>
+                          </div>
+                          <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <label>Sexo:</label>
+                            <select class="form-control selectpicker" data-live-search="true" name="sexo" id="sexo" required>
+                                <option value="Hombre">Hombre</option>
+                                <option value="Mujer">Mujer</option>
+                            </select>
                           </div>
                           <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i> Guardar</button>

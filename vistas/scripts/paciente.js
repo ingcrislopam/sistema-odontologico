@@ -18,6 +18,7 @@ function limpiar(){
     $("#apellidos").val("");
     $("#direccion").val("");
     $("#fecha_nacimiento").val("");
+    $("#sexo").val("");
 }
 
 //Función mostrar formulario
@@ -104,6 +105,8 @@ function mostrar(id_paciente){
         $("#apellidos").val(data.apellidos);
         $("#direccion").val(data.direccion);
         $("#fecha_nacimiento").val(data.fecha_nacimiento);
+        $("#sexo").val(data.sexo);
+        $("#sexo").selectpicker('refresh');
     })
 }
 
