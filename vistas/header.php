@@ -64,8 +64,8 @@ if (strlen(session_id()) < 1)
                   <li class="user-header">
                     <img src="../public/dist/img/perfilusuario.png" class="img-circle" alt="User Image">
                     <p>
-                      Ing. en Sistemas - Desarrollando Software
-                      <small>Tel: 0968669853</small>
+                      <?php echo $_SESSION['cargo'].' - '.$_SESSION['email']?>
+                      <small><?php echo $_SESSION['telefono']?></small>
                     </p>
                   </li>
                   

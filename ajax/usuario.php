@@ -123,6 +123,9 @@
                 $_SESSION['idusuario'] = $fetch->idusuario;
                 $_SESSION['nombres'] = $fetch->nombres;
                 $_SESSION['apellidos'] = $fetch->apellidos;
+                $_SESSION['telefono'] = $fetch->telefono;
+                $_SESSION['email'] = $fetch->email;
+                $_SESSION['cargo'] = $fetch->cargo;
                 $_SESSION['login'] = $fetch->login;
 
                 //Obtenemos los permisos del usuario
