@@ -10,7 +10,7 @@
 
         //Implementamos un método para insertar registros
         public function insertar($cedula, $nombres, $apellidos, $direccion, $fecha_nacimiento, $sexo){
-            $sql = "INSERT INTO paciente (cedula, nombres, apellidos, direccion, fecha_nacimiento, sexo condicion) 
+            $sql = "INSERT INTO paciente (cedula, nombres, apellidos, direccion, fecha_nacimiento, sexo, condicion) 
             VALUES ('$cedula', '$nombres', '$apellidos', '$direccion', '$fecha_nacimiento', '$sexo', '1')";
             return ejecutarConsulta($sql);
         }
