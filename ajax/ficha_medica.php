@@ -1,7 +1,11 @@
 <?php
     require_once "../modelos/Ficha_medica.php";
+    // nuevo codigo
+    require_once "../modelos/Tratamiento.php";
+    // nuevo codigo
 
     $ficha_medica = new Ficha_medica();
+    $tratamiento = new Tratamiento();
 
     $id_ficha_medica = isset($_POST["id_ficha_medica"])? limpiarCadena($_POST["id_ficha_medica"]):"";
     $id_paciente = isset($_POST["id_paciente"])? limpiarCadena($_POST["id_paciente"]):"";
@@ -51,8 +55,13 @@
             $rspta = $ficha_medica->listar();
             //Vamos a declarar un array
             $data = Array();
-
+           
             while ($reg=$rspta->fetch_object()){
+                $rspta_t = $tratamiento->mostrar_tratamientos($reg->id_ficha_medica);
+                $templist = "";
+                while($trat=$rspta_t->fetch_object()){
+                    $templist .= "<b>Fecha: </b>" . $trat->fecha . " -- <b>Diagnostico: </b>" . $trat->diagnosticos_complicaciones . "\n";
+                }
                 $data[]=array(
                     "0"=>($reg->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$reg->id_ficha_medica.')"><i class="fa fa-pencil"></i></button>'.
                     ' <button class="btn btn-danger" onclick="desactivar('.$reg->id_ficha_medica.')"><i class="fa fa-close"></i></button>':
@@ -61,13 +70,8 @@
                     "1"=>$reg->nombresPaciente,
                     "2"=>$reg->fecha,
                     "3"=>$reg->motivo_consulta,
-                    "4"=>$reg->enfermedad_problema_actual,
-                    "5"=>$reg->antecedentes_personales_familiares,
-                    "6"=>$reg->signos_vitales,
-                    "7"=>$reg->examen_sistema_estomatognatico,
-                    "8"=>$reg->planes_diagnostico,
-                    "9"=>$reg->diagnostico,
-                    "10"=>($reg->condicion)?'<span class="label bg-green">Activado</span>':
+                    "4"=>"<p style='white-space: pre;'>$templist</p>",
+                    "5"=>($reg->condicion)?'<span class="label bg-green">Activado</span>':
                     '<span class="label bg-red">Desactivado</span>'
                 );
             }

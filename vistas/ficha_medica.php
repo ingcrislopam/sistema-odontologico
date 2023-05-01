@@ -37,12 +37,7 @@ else
                                 <th>Paciente</th>
                                 <th>Fecha</th>
                                 <th>Consulta</th>
-                                <th>Enfermedad</th>
-                                <th>Antecedentes</th>
-                                <th>Signos vitales</th>
-                                <th>Examen</th>
-                                <th>Planes</th>
-                                <th>Diagnostico</th>
+                                <th>Tratamientos</th>
                                 <th>Estado</th>
                             </thead>
                             <tbody>
@@ -53,12 +48,7 @@ else
                                 <th>Paciente</th>
                                 <th>Fecha</th>
                                 <th>Consulta</th>
-                                <th>Enfermedad</th>
-                                <th>Antecedentes</th>
-                                <th>Signos vitales</th>
-                                <th>Examen</th>
-                                <th>Planes</th>
-                                <th>Diagnostico</th>
+                                <th>Tratamientos</th>
                                 <th>Estado</th>
                             </tfoot>
                         </table>

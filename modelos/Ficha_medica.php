@@ -50,7 +50,7 @@
 
         //Implementamos un método para listar los registros
         public function listar(){
-            $sql = "SELECT f.id_ficha_medica, p.id_paciente, CONCAT(p.nombres, ' ', p.apellidos) as nombresPaciente, f.fecha, f.motivo_consulta, f.enfermedad_problema_actual, f.antecedentes_personales_familiares, f.signos_vitales, f.examen_sistema_estomatognatico, f.planes_diagnostico, f.diagnostico, f.condicion FROM ficha_medica f INNER JOIN paciente p ON f.id_paciente=p.id_paciente";
+            $sql = "SELECT f.id_ficha_medica, p.id_paciente, CONCAT(p.nombres, ' ', p.apellidos) as nombresPaciente, f.fecha, f.motivo_consulta, f.condicion FROM ficha_medica f INNER JOIN paciente p ON f.id_paciente=p.id_paciente ORDER BY f.fecha DESC";
             return ejecutarConsulta($sql);
         }
 

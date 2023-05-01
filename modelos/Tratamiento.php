@@ -50,8 +50,14 @@
 
         //Implementamos un método para listar los registros
         public function listar(){
-            $sql = "SELECT t.id_tratamiento, CONCAT(f.motivo_consulta, ' - ', CONCAT(p.nombres, ' ', p.apellidos)) as consultaPaciente, t.fecha, t.diagnosticos_complicaciones, t.procedimientos, t.prescripciones, t.condicion FROM tratamiento t INNER JOIN ficha_medica f ON t.id_ficha_medica=f.id_ficha_medica INNER JOIN paciente p ON f.id_paciente=p.id_paciente";
+            $sql = "SELECT t.id_tratamiento, CONCAT(f.motivo_consulta, ' - ', CONCAT(p.nombres, ' ', p.apellidos)) as consultaPaciente, t.fecha, t.diagnosticos_complicaciones, t.procedimientos, t.prescripciones, t.condicion FROM tratamiento t INNER JOIN ficha_medica f ON t.id_ficha_medica=f.id_ficha_medica INNER JOIN paciente p ON f.id_paciente=p.id_paciente ORDER BY t.fecha DESC";
             //$sql = "SELECT t.id_tratamiento, CONCAT(f.motivo_consulta, ' - ', CONCAT(p.nombres, ' ', p.apellidos)) as consultaPaciente, t.fecha, t.d18, t.d17, t.d16, t.d15, t.d14, t.d13, t.d12, t.d11, t.diagnosticos_complicaciones, t.procedimientos, t.prescripciones, t.condicion FROM tratamiento t INNER JOIN ficha_medica f ON t.id_ficha_medica=f.id_ficha_medica INNER JOIN paciente p ON f.id_paciente=p.id_paciente INNER JOIN simbologia s ON t.d18=s.id_simbologia AND t.d17=s.id_simbologia AND t.d16=s.id_simbologia AND t.d15=s.id_simbologia AND t.d14=s.id_simbologia AND t.d13=s.id_simbologia AND t.d12=s.id_simbologia AND t.d11=s.id_simbologia";
+            return ejecutarConsulta($sql);
+        }
+
+        //Implementamos un método para mostrar los tratamiento por cada ficha médica - nuevo codigo
+        public function mostrar_tratamientos($id_ficha_medica){
+            $sql = "SELECT fecha, diagnosticos_complicaciones FROM tratamiento WHERE id_ficha_medica = '$id_ficha_medica' ORDER BY fecha DESC";
             return ejecutarConsulta($sql);
         }
     }
